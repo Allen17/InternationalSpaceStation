@@ -42,12 +42,10 @@ class ISSNetwork
                     let json = JSON(data: haveData)
                     let currentPosititon = ISSCurrentPosition(issPositionJSON: json)
 
-                    print(currentPosititon)
                     issPosition(position: currentPosititon)
                 }
 
                 issPosition(position: nil)
-
         }
     }
 

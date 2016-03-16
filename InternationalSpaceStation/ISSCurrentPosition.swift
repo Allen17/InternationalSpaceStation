@@ -37,12 +37,3 @@ struct ISSCurrentPosition
         timestamp = issPositionJSON["timestamp"].double
     }
 }
-
-
-//func GetLatestPostion() -> ISSCurrentPosition?
-//{
-//    ISSNetwork.getCurrentISSLocation { (issPosition: ISSCurrentPosition?) -> () in
-//
-//        return issPosition
-//    }
-//}
