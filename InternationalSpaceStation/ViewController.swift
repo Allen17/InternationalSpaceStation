@@ -7,19 +7,26 @@
 //
 
 import UIKit
+import MapKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, MKMapViewDelegate
+{
 
-    override func viewDidLoad() {
+    @IBOutlet weak var mapView: MKMapView!
+
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
     }
 
-    override func didReceiveMemoryWarning() {
+    override func didReceiveMemoryWarning()
+    {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
+    @IBAction func reloadISSBarButtonAction(sender: UIBarButtonItem)
+    {
+    }
 
 }
 
