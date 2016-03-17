@@ -25,7 +25,7 @@
                                 </connections>
                             </mapView>
                             <button hidden="YES" opaque="NO" alpha="0.80000000000000004" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mhh-LE-Uk9">
-                                <rect key="frame" x="275" y="250" width="50" height="50"/>
+                                <rect key="frame" x="275" y="275" width="50" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="50" id="J5k-6t-WUU"/>
                                     <constraint firstAttribute="height" constant="50" id="qNK-bA-oxV"/>
@@ -42,7 +42,7 @@
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="8vM-Yn-G1v" secondAttribute="bottom" id="a54-4I-L9J"/>
                             <constraint firstItem="mhh-LE-Uk9" firstAttribute="centerX" secondItem="8vM-Yn-G1v" secondAttribute="centerX" id="aag-Dx-Q9q"/>
                             <constraint firstAttribute="trailingMargin" secondItem="8vM-Yn-G1v" secondAttribute="trailing" constant="-20" id="j2R-e0-9vA"/>
-                            <constraint firstItem="mhh-LE-Uk9" firstAttribute="centerY" secondItem="8vM-Yn-G1v" secondAttribute="centerY" constant="-25" id="uQK-rw-0Kg"/>
+                            <constraint firstItem="mhh-LE-Uk9" firstAttribute="centerY" secondItem="8vM-Yn-G1v" secondAttribute="centerY" id="uQK-rw-0Kg"/>
                             <constraint firstItem="8vM-Yn-G1v" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="zA1-M6-uGd"/>
                         </constraints>
                     </view>
@@ -197,6 +197,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="addToFavoriteButton" destination="GuI-WB-mMk" id="kbr-tK-uoj"/>
                         <outlet property="latitudeLabel" destination="Umk-RB-Cx5" id="fuL-to-F8F"/>
                         <outlet property="longitudeLabel" destination="Cl8-44-xDI" id="iiH-1Y-w7S"/>
                         <outlet property="tableView" destination="0yf-fF-hfb" id="j7l-Gf-Ytg"/>

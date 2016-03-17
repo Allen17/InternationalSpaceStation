@@ -13,7 +13,25 @@ import CoreLocation
 
 class ISSFavoriteLocation
 {
-    let sharedInstance = ISSFavoriteLocation()
+    static let sharedInstance = ISSFavoriteLocation()
 
-    var favoriteLocation: [MKAnnotation] = []
+    var favoriteLocation: [MKPointAnnotation] = []
+
+    func addNewFavoriteLocation(coordinate: CLLocationCoordinate2D?)
+    {
+        guard let favoriteCoordinate = coordinate else
+        {
+            return
+        }
+
+        if favoriteLocation.filter({$0.coordinate.latitude == favoriteCoordinate.latitude  && $0.coordinate.longitude == favoriteCoordinate.longitude}).isEmpty
+        {
+            let newFaovriateLocation = MKPointAnnotation()
+            newFaovriateLocation.coordinate = favoriteCoordinate
+            newFaovriateLocation.title = "lat: \(favoriteCoordinate.latitude), lng: \(favoriteCoordinate.longitude)"
+
+            favoriteLocation.append(newFaovriateLocation)
+        }
+    }
+
 }

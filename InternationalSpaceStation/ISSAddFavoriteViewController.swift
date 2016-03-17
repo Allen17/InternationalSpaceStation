@@ -13,12 +13,16 @@ import CoreLocation
 class ISSAddFavoriteViewController: UIViewController, UITableViewDataSource, UITableViewDelegate
 {
 
+    //MARK: - IBOutlet
     @IBOutlet weak var latitudeLabel: UILabel!
     @IBOutlet weak var longitudeLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var addToFavoriteButton: UIButton!
 
+    //MARK: - IBAction
     @IBAction func addToFavoriteAction(sender: UIButton)
     {
+        ISSFavoriteLocation.sharedInstance.addNewFavoriteLocation(favoriteCoordinate)
         self.dismissViewControllerAnimated(true, completion: nil)
     }
 
@@ -29,6 +33,7 @@ class ISSAddFavoriteViewController: UIViewController, UITableViewDataSource, UIT
 
     let newtwork = ISSNetwork()
     var favoriteCoordinate: CLLocationCoordinate2D?
+    var savedLocation = false
 
     var passTimes: [ISSPassTime] = []
     {
@@ -59,6 +64,11 @@ class ISSAddFavoriteViewController: UIViewController, UITableViewDataSource, UIT
     override func viewWillAppear(animated: Bool)
     {
         super.viewWillAppear(animated)
+
+        if savedLocation
+        {
+            self.addToFavoriteButton.enabled = false
+        }
 
         guard let coordinate = favoriteCoordinate else
         {
