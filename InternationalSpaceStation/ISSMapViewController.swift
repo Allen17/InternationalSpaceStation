@@ -51,10 +51,10 @@ class ISSMapViewController: UIViewController, MKMapViewDelegate
             issAnnotationView.image = UIImage(named: "spaceStationIcon")
             issAnnotationView.canShowCallout = true
 
-            let button = UIButton(type: UIButtonType.DetailDisclosure)
-            button.addTarget(self, action: "buttonClicked", forControlEvents: UIControlEvents.TouchUpInside)
-
-            issAnnotationView.rightCalloutAccessoryView = button
+//            let button = UIButton(type: UIButtonType.DetailDisclosure)
+//            button.addTarget(self, action: "buttonClicked", forControlEvents: UIControlEvents.TouchUpInside)
+//
+//            issAnnotationView.rightCalloutAccessoryView = button
 
             return issAnnotationView    
         }
@@ -80,22 +80,25 @@ class ISSMapViewController: UIViewController, MKMapViewDelegate
                 return
             }
 
-            if let currentPosition = position where currentPosition.coordinate != nil
+            if let currentPosition = position,
+                        coordinate = currentPosition.coordinate
             {
                 let issPositionPin = ISSPositionAnnotation(issPosition: currentPosition, title: "SpaceStation")
 
                 strongSelf.mapView.addAnnotation(issPositionPin)
+                strongSelf.mapView.centerCoordinate = coordinate
             }
+
         }
     }
 
 
 
-    func buttonClicked()
-    {
-        self.mapView.annotations.filter({$0.title! == "SpaceStation"})
-
-    }
+//    func buttonClicked()
+//    {
+//        self.mapView.annotations.filter({$0.title! == "SpaceStation"})
+//
+//    }
 
 }
 

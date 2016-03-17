@@ -8,29 +8,6 @@
 
 import MapKit
 
-class ISSPositionAnnotationView: MKAnnotationView
-{
-
-    override init(annotation: MKAnnotation?, reuseIdentifier: String?)
-    {
-        super.init(annotation: annotation, reuseIdentifier: reuseIdentifier)
-
-
-    }
-
-    required init?(coder aDecoder: NSCoder)
-    {
-        super.init(annotation: nil, reuseIdentifier: nil)
-        fatalError("init(coder:) has not been implemented")
-    }
-
-    func buttonClicked()
-    {
-
-    }
-
-}
-
 class ISSPositionAnnotation: MKPointAnnotation
 {
     var issPosition: ISSCurrentPosition?

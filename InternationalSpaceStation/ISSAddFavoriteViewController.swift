@@ -65,8 +65,16 @@ class ISSAddFavoriteViewController: UIViewController, UITableViewDataSource, UIT
             return
         }
 
-        newtwork.getPassTime(coordinate) { (passTimes: [ISSPassTime]?) -> () in
+        newtwork.getPassTime(coordinate){
 
+            [weak self] (passTimes: [ISSPassTime]?) in
+
+            guard let strongSelf = self, havePassTimes = passTimes else
+            {
+                return
+            }
+
+            strongSelf.passTimes = havePassTimes
         }
 
     }
@@ -85,6 +93,13 @@ class ISSAddFavoriteViewController: UIViewController, UITableViewDataSource, UIT
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
     {
         let passTimeCell = tableView.dequeueReusableCellWithIdentifier("passTimeCell", forIndexPath: indexPath)
+
+        if let duration = passTimes[indexPath.row].duration,
+                   date = passTimes[indexPath.row].date
+        {
+            passTimeCell.textLabel?.text = "Date: \(date)" 
+            passTimeCell.detailTextLabel?.text = "Duration: \(duration) sec"
+        }
 
         return passTimeCell
     }
