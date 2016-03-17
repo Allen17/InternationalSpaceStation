@@ -26,14 +26,24 @@ struct ISSCurrentPosition
             return nil
         }
     }
+    var date: NSDate?
+    {
+        get
+        {
+            if let timeStamp = self.timestamp
+            {
+                return NSDate(timeIntervalSince1970: timeStamp)
+            }
+            return nil
+        }
+    }
 
     init(issPositionJSON: JSON)
     {
         let positionDictionary = issPositionJSON["iss_position"].dictionary
 
-        latitude = positionDictionary?["latitude"]?.double
+        latitude  = positionDictionary?["latitude"]?.double
         longitude = positionDictionary?["longitude"]?.double
-
         timestamp = issPositionJSON["timestamp"].double
     }
 }

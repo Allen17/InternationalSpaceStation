@@ -8,8 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		0C39F4091669EF868AB6F819 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DD1386600FFEF35AB99575B /* Pods.framework */; };
+		9F27F0381C9A592C00360A20 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F27F0371C9A592C00360A20 /* CoreLocation.framework */; };
+		9F27F03A1C9A5AC500360A20 /* ISSPassTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F27F0391C9A5AC500360A20 /* ISSPassTime.swift */; };
 		9F3E72D71C99E9B5001FA5D2 /* ISSNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F3E72D61C99E9B5001FA5D2 /* ISSNetwork.swift */; };
 		9F3E72D91C99EDA4001FA5D2 /* ISSCurrentPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F3E72D81C99EDA4001FA5D2 /* ISSCurrentPosition.swift */; };
+		9F3E72DB1C9A0A77001FA5D2 /* ISSPositionAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F3E72DA1C9A0A77001FA5D2 /* ISSPositionAnnotationView.swift */; };
 		9F5646881C99D82900390F8C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F5646871C99D82900390F8C /* AppDelegate.swift */; };
 		9F56468A1C99D82900390F8C /* ISSMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F5646891C99D82900390F8C /* ISSMapViewController.swift */; };
 		9F56468D1C99D82900390F8C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F56468B1C99D82900390F8C /* Main.storyboard */; };
@@ -17,6 +20,9 @@
 		9F5646921C99D82900390F8C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F5646901C99D82900390F8C /* LaunchScreen.storyboard */; };
 		9F56469D1C99D82900390F8C /* InternationalSpaceStationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F56469C1C99D82900390F8C /* InternationalSpaceStationTests.swift */; };
 		9F5646A81C99D82900390F8C /* InternationalSpaceStationUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F5646A71C99D82900390F8C /* InternationalSpaceStationUITests.swift */; };
+		9FCBBC3C1C9A0F3900DDD2E2 /* ISSPositionAnnotationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9FCBBC3B1C9A0F3900DDD2E2 /* ISSPositionAnnotationView.xib */; };
+		9FCBBC3E1C9A0FB400DDD2E2 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FCBBC3D1C9A0FB400DDD2E2 /* MapKit.framework */; };
+		9FCBBC401C9A4E7800DDD2E2 /* ISSAddFavoriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FCBBC3F1C9A4E7800DDD2E2 /* ISSAddFavoriteViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,8 +44,11 @@
 
 /* Begin PBXFileReference section */
 		4DD1386600FFEF35AB99575B /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9F27F0371C9A592C00360A20 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		9F27F0391C9A5AC500360A20 /* ISSPassTime.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ISSPassTime.swift; sourceTree = "<group>"; };
 		9F3E72D61C99E9B5001FA5D2 /* ISSNetwork.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ISSNetwork.swift; sourceTree = "<group>"; };
 		9F3E72D81C99EDA4001FA5D2 /* ISSCurrentPosition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ISSCurrentPosition.swift; sourceTree = "<group>"; };
+		9F3E72DA1C9A0A77001FA5D2 /* ISSPositionAnnotationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ISSPositionAnnotationView.swift; sourceTree = "<group>"; };
 		9F5646841C99D82900390F8C /* InternationalSpaceStation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InternationalSpaceStation.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F5646871C99D82900390F8C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9F5646891C99D82900390F8C /* ISSMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ISSMapViewController.swift; sourceTree = "<group>"; };
@@ -53,6 +62,9 @@
 		9F5646A31C99D82900390F8C /* InternationalSpaceStationUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InternationalSpaceStationUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F5646A71C99D82900390F8C /* InternationalSpaceStationUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InternationalSpaceStationUITests.swift; sourceTree = "<group>"; };
 		9F5646A91C99D82900390F8C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9FCBBC3B1C9A0F3900DDD2E2 /* ISSPositionAnnotationView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ISSPositionAnnotationView.xib; sourceTree = "<group>"; };
+		9FCBBC3D1C9A0FB400DDD2E2 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		9FCBBC3F1C9A4E7800DDD2E2 /* ISSAddFavoriteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ISSAddFavoriteViewController.swift; sourceTree = "<group>"; };
 		A80E049BC12A79A63CEC200D /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		B3CC4D9723D6F34D5BB65611 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -62,6 +74,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9F27F0381C9A592C00360A20 /* CoreLocation.framework in Frameworks */,
+				9FCBBC3E1C9A0FB400DDD2E2 /* MapKit.framework in Frameworks */,
 				0C39F4091669EF868AB6F819 /* Pods.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -119,8 +133,12 @@
 			children = (
 				9F5646871C99D82900390F8C /* AppDelegate.swift */,
 				9F3E72D61C99E9B5001FA5D2 /* ISSNetwork.swift */,
+				9F27F0391C9A5AC500360A20 /* ISSPassTime.swift */,
 				9F3E72D81C99EDA4001FA5D2 /* ISSCurrentPosition.swift */,
+				9FCBBC3B1C9A0F3900DDD2E2 /* ISSPositionAnnotationView.xib */,
+				9F3E72DA1C9A0A77001FA5D2 /* ISSPositionAnnotationView.swift */,
 				9F5646891C99D82900390F8C /* ISSMapViewController.swift */,
+				9FCBBC3F1C9A4E7800DDD2E2 /* ISSAddFavoriteViewController.swift */,
 				9F56468B1C99D82900390F8C /* Main.storyboard */,
 				9F56468E1C99D82900390F8C /* Assets.xcassets */,
 				9F5646901C99D82900390F8C /* LaunchScreen.storyboard */,
@@ -150,6 +168,8 @@
 		D42C528F8DAF8A8A51F107A5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9F27F0371C9A592C00360A20 /* CoreLocation.framework */,
+				9FCBBC3D1C9A0FB400DDD2E2 /* MapKit.framework */,
 				4DD1386600FFEF35AB99575B /* Pods.framework */,
 			);
 			name = Frameworks;
@@ -262,6 +282,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9FCBBC3C1C9A0F3900DDD2E2 /* ISSPositionAnnotationView.xib in Resources */,
 				9F5646921C99D82900390F8C /* LaunchScreen.storyboard in Resources */,
 				9F56468F1C99D82900390F8C /* Assets.xcassets in Resources */,
 				9F56468D1C99D82900390F8C /* Main.storyboard in Resources */,
@@ -339,8 +360,11 @@
 			files = (
 				9F56468A1C99D82900390F8C /* ISSMapViewController.swift in Sources */,
 				9F5646881C99D82900390F8C /* AppDelegate.swift in Sources */,
+				9F27F03A1C9A5AC500360A20 /* ISSPassTime.swift in Sources */,
 				9F3E72D91C99EDA4001FA5D2 /* ISSCurrentPosition.swift in Sources */,
 				9F3E72D71C99E9B5001FA5D2 /* ISSNetwork.swift in Sources */,
+				9FCBBC401C9A4E7800DDD2E2 /* ISSAddFavoriteViewController.swift in Sources */,
+				9F3E72DB1C9A0A77001FA5D2 /* ISSPositionAnnotationView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

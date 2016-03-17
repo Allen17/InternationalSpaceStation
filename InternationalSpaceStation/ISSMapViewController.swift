@@ -14,23 +14,75 @@ class ISSMapViewController: UIViewController, MKMapViewDelegate
     let issNetwork = ISSNetwork()
     @IBOutlet weak var mapView: MKMapView!
 
+    @IBOutlet weak var addFavoriteLocationButton: UIButton!
+    @IBAction func addFavoriteButtonAction(sender: UIButton)
+    {
+        addFavoriteLocationButton.hidden = true
+        self.performSegueWithIdentifier("SegueToAddFavorite", sender: nil)
+    }
+
+    @IBAction func addFavoriteBarButton(sender: UIBarButtonItem)
+    {
+        addFavoriteLocationButton.hidden = false
+    }
+
     @IBAction func reloadISSBarButtonAction(sender: UIBarButtonItem)
     {
         let currentAnnotationPin = self.mapView.annotations.filter({$0.title! == "SpaceStation"})
 
         self.mapView.removeAnnotations(currentAnnotationPin)
+        self.displayCurrentISSPosition()
+    }
 
+    func mapViewDidFinishLoadingMap(mapView: MKMapView)
+    {
+        if mapView.annotations.filter({$0.title! == "SpaceStation"}).isEmpty
+        {
+            self.displayCurrentISSPosition()
+        }
+    }
+
+    func mapView(mapView: MKMapView, viewForAnnotation annotation: MKAnnotation) -> MKAnnotationView?
+    {
+        if let positiionAnnotation = annotation as? ISSPositionAnnotation
+        {
+            let issAnnotationView = MKAnnotationView(annotation: positiionAnnotation, reuseIdentifier: "ISSPositationView")
+
+            issAnnotationView.image = UIImage(named: "spaceStationIcon")
+            issAnnotationView.canShowCallout = true
+
+            let button = UIButton(type: UIButtonType.DetailDisclosure)
+            button.addTarget(self, action: "buttonClicked", forControlEvents: UIControlEvents.TouchUpInside)
+
+            issAnnotationView.rightCalloutAccessoryView = button
+
+            return issAnnotationView    
+        }
+
+        return nil
+    }
+
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)
+    {
+        if let addFavoriteViewController = segue.destinationViewController as? ISSAddFavoriteViewController
+        {
+            addFavoriteViewController.favoriteCoordinate = mapView.centerCoordinate
+        }
+
+    }
+
+    func displayCurrentISSPosition()
+    {
         self.issNetwork.getCurrentISSLocation { [weak self] (position) in
 
             guard let strongSelf = self else
             {
                 return
             }
-	
-            if let currentPosition = position,
-                     issCoordinate = currentPosition.coordinate
+
+            if let currentPosition = position where currentPosition.coordinate != nil
             {
-                let issPositionPin = ISSPositionAnnotation(coordinate: issCoordinate, title: "SpaceStation")
+                let issPositionPin = ISSPositionAnnotation(issPosition: currentPosition, title: "SpaceStation")
 
                 strongSelf.mapView.addAnnotation(issPositionPin)
             }
@@ -38,15 +90,12 @@ class ISSMapViewController: UIViewController, MKMapViewDelegate
     }
 
 
-}
 
-class ISSPositionAnnotation: MKPointAnnotation
-{
-    init(coordinate: CLLocationCoordinate2D, title: String)
+    func buttonClicked()
     {
-        super.init()
-        self.coordinate = coordinate
-        self.title = title
+        self.mapView.annotations.filter({$0.title! == "SpaceStation"})
+
     }
+
 }
 
