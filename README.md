@@ -2,8 +2,7 @@
 
 
 
-# git command 
-#
+# install using git:
 # git clone https://github.com/Allen17/InternationalSpaceStation.git
 # pod insall 
  
